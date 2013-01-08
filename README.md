@@ -7,10 +7,9 @@ Cloud trading analysis Platform
 
 Target Implementations
 
-* Google Big Query
-* AWS RedShift
-
-
+* SQL 92 Compliance
+* AWS Redshift
+* Bigquery
 
 We aim to provide simple graphical representations of the results of configurable analytics.
 
