@@ -1,7 +1,8 @@
-capital-insight
+gp-insight
 ===============
 
-Statistical analysis of transaction profitability.
+h2. Statistical analysis of transaction profitability=
+
 
 Trading analysis to using cloud resources.
 
