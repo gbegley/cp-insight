@@ -1,24 +1,24 @@
-gp-insight
-===============
-
-h2. Statistical analysis of transaction profitability=
-
+### GP-Insight - Statistical analysis of transaction profitability
 
 Trading analysis to using cloud resources.
 
 Target Implementations
 
-* SQL-92 compliance for relational data interchange from local (hypersonic) to  . 
+* SQL-92 compliance for relational data interchange from local (hypersonic) to cloud. 
 * AWS Redshift
 * Bigquery
 
-We aim to provide simple graphical representations of the results of configurable analytics.
+#### Goals
+* Plugin platform
+** A configurable set of analytics
+** Graphical representations of the results of configurable analytics.
 
-Load transactions containing sales, cost and aggregation components. and then 
-drive an intuitive analysis to help users understand business performance metrics.
+#### Process flow
+1. Load transactions containing sales, cost and aggregation components
+2. Provide users with an intuitive analysis to help users understand business performance metrics
 
 
-Graphical map reduce
+#### Graphical map reduce
 * Choose any record attributes to use for grouping (map).
 * Choose metrics to produce analysis results (init, reduce and finalize).
 
