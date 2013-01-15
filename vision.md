@@ -9,8 +9,10 @@ Metrics are to be provided from a catalog of plugins.
 * formula
 
 Metrics can have dependencies.
+```sql
 sum(cost) as totalCost
 sum(sale) as totalSales
 (totalSales - totalCost) as margin
 (margin/totalCost) as grossMarginPercentage
+```
 
