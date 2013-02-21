@@ -19,5 +19,29 @@ public class Sale extends LinkedHashMap<String,Entity> {
         this.pricing = pricing;
     }
 
+    public Pricing getPricing() {
+        return pricing;
+    }
 
+    public void setPricing(Pricing pricing) {
+        this.pricing = pricing;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("\"product\":").append(product);
+        sb.append(",");
+        sb.append("\"pricing\":").append(pricing);
+        sb.append("}");
+        return sb.toString();
+    }
 }
