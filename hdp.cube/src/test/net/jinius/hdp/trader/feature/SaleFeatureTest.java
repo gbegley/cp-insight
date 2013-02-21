@@ -1,9 +1,7 @@
 package net.jinius.hdp.trader.feature;
 
 import net.jinius.hdp.trader.Trade;
-import net.jinius.hdp.trader.feature.indexed.EntityFeature;
 import net.jinius.hdp.trader.feature.indexed.PricingFeature;
-import net.jinius.hdp.trader.feature.indexed.ProductFeature;
 
 import java.util.*;
 
@@ -59,7 +57,7 @@ public class SaleFeatureTest {
 
 
         PricingFeature pricingFeature = new PricingFeature(headers,"BASE","COL1","COL2","COL3","LIST"  );
-        SaleFeature saleFeature = new SaleFeature();
+        TradeFeature saleFeature = new TradeFeature();
         Map<String,EntityFeature> entities = new LinkedHashMap<String, EntityFeature>();
         entities.put("customer",customerFeature);
         entities.put("vendor",vendorFeature);

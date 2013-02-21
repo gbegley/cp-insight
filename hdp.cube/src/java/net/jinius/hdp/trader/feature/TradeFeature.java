@@ -3,9 +3,7 @@ package net.jinius.hdp.trader.feature;
 import net.jinius.hdp.trader.Pricing;
 import net.jinius.hdp.trader.Product;
 import net.jinius.hdp.trader.Trade;
-import net.jinius.hdp.trader.feature.indexed.EntityFeature;
 import net.jinius.hdp.trader.feature.indexed.PricingFeature;
-import net.jinius.hdp.trader.feature.indexed.ProductFeature;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,16 +11,16 @@ import java.util.Map;
 /**
  *
  */
-public class SaleFeature implements Feature<Trade,String[]> {
+public class TradeFeature implements Feature<Trade,String[]> {
 
     private Map<String,EntityFeature> entityFeatures;
     private ProductFeature productFeature;
     private PricingFeature pricingFeature;
 
-    public SaleFeature() {
+    public TradeFeature() {
     }
 
-    public SaleFeature(
+    public TradeFeature(
             LinkedHashMap<String, EntityFeature> entityFeatures,
             ProductFeature productFeature,
             PricingFeature pricingFeature

@@ -12,14 +12,37 @@ public class Entity extends LinkedHashMap<String, String>{
         this.id = id;
     }
 
+    public static enum Type {
+        MANUFACTURER,
+        VENDOR,
+        SELLER,
+        INSIDE,
+        OUTSIDE(true),
+        BROKER(true),
+        BUYER(true),
+        CUSTOMER(true)
+        ;
+
+        boolean buyer = false;
+
+        Type(boolean t){
+            this.buyer = t;
+        }
+
+        Type(){
+            this(false);
+        }
+    }
+
+    protected Type type;
+    public Type getType() {
+        return type;
+    }
+
     public Object getId() {
         return id;
     }
 
-    protected EntityType type;
-    public EntityType getType() {
-        return type;
-    }
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -31,4 +54,7 @@ public class Entity extends LinkedHashMap<String, String>{
         sb.append("}");
         return sb.toString();
     }
+
+
+
 }

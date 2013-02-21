@@ -43,4 +43,11 @@ public class Trade extends LinkedHashMap<String,Entity> {
         sb.append("}");
         return sb.toString();
     }
+
+    public enum Type {
+        MARKET,LIMIT,SPA;
+        Type(boolean t){}
+        Type(){this(false);}
+    }
+
 }

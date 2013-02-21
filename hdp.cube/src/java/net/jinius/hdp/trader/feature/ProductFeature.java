@@ -1,4 +1,4 @@
-package net.jinius.hdp.trader.feature.indexed;
+package net.jinius.hdp.trader.feature;
 
 import net.jinius.hdp.trader.Product;
 

@@ -1,4 +1,6 @@
-package net.jinius.hdp.trader;
+package net.jinius.hdp.trader.rule;
+
+import net.jinius.hdp.trader.Values;
 
 /**
  *
