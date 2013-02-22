@@ -1,4 +1,4 @@
-package net.jinius.hdp.trader;
+package net.jinius.hdp.trader.feature;
 
 /**
  *

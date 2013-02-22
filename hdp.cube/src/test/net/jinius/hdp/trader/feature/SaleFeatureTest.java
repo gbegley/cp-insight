@@ -2,6 +2,8 @@ package net.jinius.hdp.trader.feature;
 
 import net.jinius.hdp.trader.Trade;
 import net.jinius.hdp.trader.feature.indexed.PricingFeature;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.*;
 
@@ -11,7 +13,7 @@ public class SaleFeatureTest {
 
 
 
-
+    @Test
     public void testSalesFeature(){
         String [] headers = new String[]{
                 "PRODUCT_ID",
@@ -66,16 +68,22 @@ public class SaleFeatureTest {
         saleFeature.setPricingFeature(pricingFeature);
         saleFeature.setProductFeature(productFeature);
 
-        List<Trade> sales = new ArrayList<Trade>();
+        List<Trade> trades = new ArrayList<Trade>();
         for(String[]line:lines) {
             Trade sale = saleFeature.scan(line);
-            sales.add(sale);
+            trades.add(sale);
         }
-        System.out.println("Done - results : [");
-        for(Trade s : sales) {
-            System.out.println(s);
+
+        Assert.assertEquals(2, trades.size());
+        for(Trade t : trades) {
+            Assert.assertNotNull(t);
+            Assert.assertNotNull(t.get("vendor"));
+            Assert.assertNotNull(t.get("customer"));
+            Assert.assertNotNull(t.get("manufacturer"));
         }
-        System.out.println("]");
+
+
+        Assert.assertNotNull(trades);
 
     }
 
