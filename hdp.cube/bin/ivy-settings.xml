@@ -1,0 +1,70 @@
+<ivysettings>
+    <settings defaultResolver="chain"/>
+    <properties file="${ivy.settings.dir}/ivy-settings.properties"/>
+    <!--
+    <caches defaultCacheDir="C:\dev\code\.m2\repository"
+            ivyPattern="[organisation]/[module]/[revision]/[artifact]-[revision]-ivy.xml"
+            artifactPattern="[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+    <caches defaultCacheDir="${ivy.settings.dir}/lib"
+            ivyPattern="ivy/[organisation]/[module]/[revision]/[artifact]-[revision]-ivy.xml"
+            artifactPattern="[artifact]-[revision].[ext]"/>
+    -->
+    <caches defaultCacheDir="${m2.repository}"
+            artifactPattern="[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+    <include url="${ivy.default.settings.dir}/ivysettings-public.xml"/>
+    <include url="${ivy.default.settings.dir}/ivysettings-shared.xml"/>
+    <include url="${ivy.default.settings.dir}/ivysettings-local.xml"/>
+    <resolvers>
+        <url name="epacube-dev">
+            <ivy pattern="http://nexus.epacube.com:8081/nexus/content/groups/dev/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+            <artifact
+                    pattern="http://nexus.epacube.com:8081/nexus/content/groups/dev/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="central" m2compatible="true">
+            <artifact
+                    pattern="http://repo1.maven.org/maven2/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="com.springsource.repository.bundles.release">
+            <ivy pattern="http://repository.springsource.com/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+            <artifact
+                    pattern="http://repository.springsource.com/ivy/bundles/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="maven-springframework-release" m2compatible="true">
+            <artifact pattern="http://maven.springframework.org/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="maven-springframework-milestone" m2compatible="true">
+            <artifact pattern="http://maven.springframework.org/milestone/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="spring-roo-repository-release" m2compatible="true">
+            <artifact pattern="http://spring-roo-repository.springsource.org/release/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="jboss-releases" m2compatible="true">
+            <artifact pattern="https://repository.jboss.org/nexus/content/repositories/releases/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+        <url name="alfresco-releases" m2compatible="true">
+            <artifact pattern="http://maven.alfresco.com/nexus/content/groups/public/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </url>
+
+
+        <ibiblio name="ibiblio"/>
+        <filesystem name="internal">
+            <ivy pattern="${repository.dir}/[module]/ivy-[revision].xml"/>
+            <artifact pattern="${m2.repository}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </filesystem>
+        <filesystem name="internal-maven" m2compatible="true" local="true">
+            <artifact pattern="${m2.repository}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
+        </filesystem>
+        <chain name="chain" dual="true">
+            <resolver ref="internal"/>
+            <resolver ref="epacube-dev"/>
+            <resolver ref="maven-springframework-milestone"/>
+            <resolver ref="central"/>
+            <resolver ref="ibiblio"/>
+            <resolver ref="maven-springframework-release"/>
+            <resolver ref="spring-roo-repository-release"/>
+            <resolver ref="jboss-releases"/>
+            <resolver ref="alfresco-releases"/>
+        </chain>
+
+    </resolvers>
+</ivysettings>
