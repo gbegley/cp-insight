@@ -7,11 +7,13 @@ Target Implementations
 * SQL-92 compliance for relational data interchange from local (hypersonic) to cloud. 
 * AWS Redshift
 * Bigquery
+* HBase
 
 #### Goals
 * Plugin platform
 ** A configurable set of analytics
 ** Graphical representations of the results of configurable analytics.
+** Automated selection of aggregates
 
 #### Process flow
 1. Load transactions containing sales, cost and aggregation components
